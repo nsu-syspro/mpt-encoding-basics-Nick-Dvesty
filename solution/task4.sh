@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
 # Вывести дату в формате:
-#   Freitag, 13. Oktober 2023
-LANG=de_DE.UFT8 date '+%A, %e. %B %Y' -d "$@"
+#   13 октября 2023 года, Пятница
+
+export LC_ALL=de_DE.utf8
+str_data=$1
+
+date=$(date -d "$str_data" +'%-e %B %Y года, %A')
+echo "$date"
+
