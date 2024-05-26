@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
 
 # Вывести дату в формате:
-#   13 октября 2023 года, Пятница
+#   Freitag, 13. Oktober 2023
 
 export LC_ALL=de_DE.utf8
-str_data=$1
+date_str=$1
 
-date=$(date -d "$str_data" +'%-e %B %Y года, %A')
-echo "$date"
-
+formatted_date=$(date -d "$date_str" +'%A, %d. %B %Y')
+echo "$formatted_date"

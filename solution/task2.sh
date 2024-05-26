@@ -2,4 +2,7 @@
 
 # Вывести время в формате:
 #   15 час/а/ов 23 минут/ы
-date '+%H час/а/ов %M минут/ы' -d "$@"
+
+time=$1
+IFS=':' read -r hours minutes seconds <<< "$time"
+echo "$hours час/а/ов ${minutes} минут/ы"
