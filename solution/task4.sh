@@ -4,8 +4,8 @@
 #   13 октября 2023 года, Пятница
 
 export LC_ALL=de_DE.utf8
-str_data=$1
+date_str=$1
 
-date=$(date -d "$str_data" +'%-e %B %Y года, %A')
-echo "$date"
+formatted_date=$(date -d "$date_str" +'%A, %d. %B %Y')
+echo "$formatted_date"
 
